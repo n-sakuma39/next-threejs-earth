@@ -23,6 +23,7 @@ import fragmentShader from "../../public/shaders/fragment.glsl";
 const ThreeCanvas = () => {
   useEffect(() => {
     if (typeof window !== "undefined") {
+      // クライアントサイドでのみ実行されるコード
       const params = {
         sunIntensity: 2.5,
         speedFactor: 3.0,

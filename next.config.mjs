@@ -6,10 +6,6 @@ const nextConfig = {
     deviceSizes: [],
     imageSizes: [],
   },
-};
-
-export default withTM(["three"])({
-  ...nextConfig,
   webpack: (config) => {
     config.module.rules.push({
       test: /\.css$/,
@@ -19,7 +15,6 @@ export default withTM(["three"])({
       test: /\.glsl$/,
       use: "raw-loader",
     });
-    // 画像ファイル用のローダーを追加
     config.module.rules.push({
       test: /\.(png|jpe?g|gif|svg|ico|bmp|tiff)$/,
       use: [
@@ -35,4 +30,12 @@ export default withTM(["three"])({
     });
     return config;
   },
-});
+  experimental: {
+    appDir: true,
+  },
+  future: {
+    strictPostcssConfiguration: true,
+  },
+};
+
+export default withTM(["three"])(nextConfig);
