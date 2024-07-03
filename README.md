@@ -1,37 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## 概要
 
-## Getting Started
+このプロジェクトは、Next.js と Three.js を使用して構築された WebGL アプリケーションです。3D グラフィックスを表示し、インタラクティブな体験を提供します。
 
-First, run the development server:
+## 技術スタック
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Next.js 14
+- React 18
+- TypeScript
+- Three.js
+- Tailwind CSS
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 主な使用ライブラリ
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- three
+- dat.gui
+- stats.js
+- next-transpile-modules
+- css-loader
+- style-loader
+- glslify-loader
+- raw-loader
+- file-loader
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 実装機能
 
-## Learn More
+- 3D オブジェクトのレンダリング
+- インタラクティブなカメラコントロール
+- ローディングプログレスバー
+- カスタムシェーダー
 
-To learn more about Next.js, take a look at the following resources:
+## コメント
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+このプロジェクトは、WebGL の学習と実践のために作成されました。Three.js を使用して 3D グラフィックスをレンダリングし、Next.js を使用してアプリケーションを構築しています。
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+※ Node のバージョン（v20.9.0 で作成）が異なると実行した際、エラーになることがあります。
 
-## Deploy on Vercel
+## 著者
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# next-threejs-earth
+[SakuTech blog](https://github.com/n-sakuma39/)
