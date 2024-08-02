@@ -57,32 +57,36 @@ body {
   background-color: #848484;
 }
 
-.box-text {
+#box-text {
   opacity: 0;
-  transition: opacity 3s ease-in-out;
+  visibility: hidden;
+  transition: opacity 2s ease-in-out, visibility 0s 2s;
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  color: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
-  text-shadow: 0 0 3px #000, 0 0 3px #000, 0 0 5px #000, 0 0 10px #000,
-    0 0 10px #000;
+  color: white;
 }
 
-.box-text h1 {
+#box-text.visible {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 2s ease-in-out, visibility 0s;
+}
+
+#box-text h1 {
   font-size: 3.3rem;
   margin-bottom: 1.2rem;
   font-weight: normal;
 }
 
-.box-text p {
+#box-text p {
   font-size: 1.3rem;
   padding: 0 5px;
 }
 
-.box-text-inner {
+#box-text-inner {
   display: flex;
   justify-content: center;
   align-items: center;

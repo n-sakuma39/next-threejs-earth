@@ -20,10 +20,14 @@ import GaiaSky from "../../public/assets/Gaia_EDR3_darkened.png";
 import vertexShader from "../../public/shaders/vertex.glsl";
 import fragmentShader from "../../public/shaders/fragment.glsl";
 
-const ThreeCanvas = () => {
+interface ThreeCanvasProps {
+  onLoadComplete: () => void;
+  onEarthReady: () => void;
+}
+
+const ThreeCanvas: React.FC<ThreeCanvasProps> = ({ onLoadComplete, onEarthReady }) => {
   useEffect(() => {
     if (typeof window !== "undefined") {
-      // クライアントサイドでのみ実行されるコード
       const params = {
         sunIntensity: 2.5,
         speedFactor: 3.0,
@@ -178,6 +182,8 @@ const ThreeCanvas = () => {
           gui.hide();
 
           await updateLoadingProgressBar(1.0, 100);
+          onLoadComplete(); // ローディング完了時に親コンポーネントに通知
+          onEarthReady(); // 地球儀の準備が完了したことを通知
         },
         updateScene: function (interval, elapsed) {
           this.earth?.rotateY(interval * 0.005 * params.speedFactor);
@@ -194,9 +200,9 @@ const ThreeCanvas = () => {
 
       runApp(app, scene, renderer, camera, true, undefined, undefined);
     }
-  }, []);
+  }, [onLoadComplete, onEarthReady]);
 
-  return null;
+  return <div id="three-canvas-container" />;
 };
 
 export default ThreeCanvas;
